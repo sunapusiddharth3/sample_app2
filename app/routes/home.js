@@ -14,7 +14,7 @@ export default Ember.Route.extend({
         subjectTableData:this.store.findAll('subject-table'),
         timeTableDayNtimeWiseData:this.store.findAll('time-table-day-ntime-wise'),
         timeTableData:null,
-        classOfStudent:1,
+        marksOfStudent:null,
         StudentClass:null,
       });
   }

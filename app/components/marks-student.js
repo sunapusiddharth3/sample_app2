@@ -21,7 +21,7 @@ ajax: Ember.inject.service(),
     getIndividualMarksFinal(){
       let _this = this;
       // console.log('from final');
-      var Sclass =this.get('model4');
+      var StudentClass =this.get('model.StudentClass');
       var markstype =this.get('model3');
       // console.log('class');
       // console.log(Sclass);
@@ -48,7 +48,7 @@ ajax: Ember.inject.service(),
 
       this.get('ajax').request(`http://localhost:80/sample_app_api/MarksIndividualStudent.php`, {}).then(function(response) {
       //  _this.set('resultData', response.data);
-      _this.set('model4',response);
+      _this.set('model.marksOfStudent',response);
       console.log(response);
       // resultData = response;
       //  console.log('resultData inner'+resultData);
@@ -77,7 +77,7 @@ ajax: Ember.inject.service(),
       console.log('from t3');
     },
     getAjaxData(){
-      console.log('classOFstudent'+this.get('model4'));
+      console.log('classOFstudent'+this.get('model.marksOfStudent'));
     }
   },
 });
