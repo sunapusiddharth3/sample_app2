@@ -1,0 +1,37 @@
+<h1>HOME</h1>
+{{!-- {{#each model.staffData as |a|}}
+<p>{{a.id}}</p>
+{{/each}} --}}
+<div class="header">
+  <h3>contact data</h3>
+  <div class="contact_data">
+    <span class="profile_pic">{{profile-pic}}</span>
+      {{header-data model=model.particularContactData}}
+  </div>
+</div>
+<hr>
+<div class="body">
+  <div class="contact_details">
+    <h4>Contact Details:</h4>
+    {{contact-data model=model.particularContactData}}
+
+  </div>
+  <div class="leaves">
+    <h5>Leaves</h5>
+    {{leaves-data model=model.leavesData}}
+  </div>
+
+  <div class="marks">
+    Marks Of Student(Final):
+    {{marks-student model3='final' model4=model.classOfStudent}}
+  </div>
+
+  <div class="time_table">
+    Time Table :
+    {{time-table-s model1=model.timeTableData model2=model.classOfStudent }}
+  </div>
+  
+</div>
+<div class="footer">
+
+</div>
