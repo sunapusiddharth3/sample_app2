@@ -15,7 +15,7 @@ export default Ember.Route.extend({
         timeTableDayNtimeWiseData:this.store.findAll('time-table-day-ntime-wise'),
         timeTableData:null,
         classOfStudent:1,
-
+        StudentClass:null,
       });
   }
 });

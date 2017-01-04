@@ -10,7 +10,7 @@ export default Ember.Component.extend({
     getData1(){
       var studentRecord = this.get('store').peekRecord('student',1000);
       var Sclass = studentRecord.get('present_class');
-      this.set('model2',Sclass);
+      this.set('model.StudentClass',Sclass);
       var section =studentRecord.get('section');
       var dayNames = ["sun", "mon", "tue", "wed", "thu", "fri","sat"];
       var d = new Date();
@@ -32,11 +32,11 @@ export default Ember.Component.extend({
           subjectName.push(tempData.get('name'));
       }
       console.log(subjectName);
-      this.set('model1',subjectName);
+      this.set('model.timeTableData',subjectName);
     },
     getData2(){
-      console.log(this.get('model1'));
-      console.log(this.get('model2'));
+      console.log(this.get('model.timeTableData'));
+      console.log(this.get('model.StudentClass'));
     },
     getData3(){
       // console.log(this.get('model3'));
