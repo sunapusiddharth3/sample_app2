@@ -4,10 +4,10 @@ export default Ember.Component.extend({
   store: Ember.inject.service(),
   init(){
     this._super();
-    this.send('getData1');
+    this.send('getData');
   },
   actions:{
-    getData1(){
+    getData(){
       var studentRecord = this.get('store').peekRecord('student',1000);
       var Sclass = studentRecord.get('present_class');
       this.set('model.StudentClass',Sclass);
@@ -20,12 +20,10 @@ export default Ember.Component.extend({
       time_slot_codes.push(abc.get('time_slot1'));
       time_slot_codes.push(abc.get('time_slot2'));
       time_slot_codes.push(abc.get('time_slot3'));
-      // time_slot_codes.push(abc.get('time_slot4'));
       time_slot_codes.push(abc.get('time_slot5'));
       time_slot_codes.push(abc.get('time_slot6'));
       time_slot_codes.push(abc.get('time_slot7'));
       time_slot_codes.push(abc.get('time_slot8'));
-      // console.log(time_slot_codes);
       var subjectName=[];
       for(var i=0;i<7;i++){
           var tempData=this.get('store').peekRecord('subject-table',time_slot_codes[i]);
@@ -33,14 +31,6 @@ export default Ember.Component.extend({
       }
       console.log(subjectName);
       this.set('model.timeTableData',subjectName);
-    },
-    getData2(){
-      console.log(this.get('model.timeTableData'));
-      console.log(this.get('model.StudentClass'));
-    },
-    getData3(){
-      // console.log(this.get('model3'));
-      // console.log(this.model.data);
     }
   }
 });

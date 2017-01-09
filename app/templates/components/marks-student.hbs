@@ -1,6 +1,26 @@
-<button {{action 'getAjaxData'}}>getAjaxData</button>
-{{#each model.marksOfStudent as |a|}}
-{{#each-in a as |k v|}}
-  {{k}}-{{v}}
-{{/each-in}}
-{{/each}}
+<table>
+  <thead>
+    <tr>
+      <th>
+        Subject
+      </th>
+      <th>
+        Marks
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model.marksOfStudent as |a|}}
+    {{#each-in a as |k v|}}
+    <tr>
+      <td>
+        {{k}}
+      </td>
+      <td>
+        {{v}}
+      </td>
+    </tr>
+    {{/each-in}}
+    {{/each}}
+  </tbody>
+</table>

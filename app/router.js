@@ -12,7 +12,6 @@ Router.map(function() {
   this.route('home');
   this.route('students');
   this.route('staffs');
-  this.route('testing2');
 });
 
 export default Router;
