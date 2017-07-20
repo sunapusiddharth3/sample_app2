@@ -1,0 +1,22 @@
+<h1>Teacher PAGE</h1>
+
+{{model.DayWiseTimeTableData.uid}}
+
+<p>
+  time table
+  {{teacher-time-table model=model.particularTeacherTimeTableData}}
+</p>
+<p>
+  notifications
+</p>
+<p>
+  take attendance <button {{action 'getClassDataForTimeTable2'}}>Get time table data</button>
+</p>
+<div class="attendance_sheet">
+  attendane
+  {{#each model.student_name as |b| }}
+    <p>
+      {{decodeArrayValues b}}
+    </p>
+  {{/each}}
+</div>

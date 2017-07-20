@@ -16,7 +16,7 @@ export default Ember.Component.extend({
       var d = new Date();
       var param1=Sclass+section.toLowerCase()+dayNames[d.getDay()];
       var abc=this.get('store').peekRecord('time-table-day-ntime-wise',param1);
-      var time_slot_codes=[]
+      var time_slot_codes=[];
       time_slot_codes.push(abc.get('time_slot1'));
       time_slot_codes.push(abc.get('time_slot2'));
       time_slot_codes.push(abc.get('time_slot3'));

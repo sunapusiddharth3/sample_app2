@@ -1,5 +1,7 @@
 import Ember from 'ember';
 const {
+  RSVP,
+  Route,
   inject: {
     service
   }

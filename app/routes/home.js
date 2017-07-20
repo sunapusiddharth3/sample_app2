@@ -6,6 +6,7 @@ export default Ember.Route.extend({
   model(){
     return RSVP.hash({
         staffData: this.store.findAll('staff'),
+        teacherData: this.store.findAll('teacher'),
         studentData: this.store.findAll('student'),
         contactData: this.store.findAll('contact-detail'),
         leavesData :this.store.findRecord('leave',123),

@@ -12,6 +12,8 @@ Router.map(function() {
   this.route('home');
   this.route('students');
   this.route('staffs');
+  this.route('teacher');
+  this.route('online_attendance_student');
 });
 
 export default Router;
