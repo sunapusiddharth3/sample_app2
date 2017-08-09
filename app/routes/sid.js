@@ -19,7 +19,7 @@ export default Ember.Route.extend({
       //       contentType: 'application/json; charset=utf-8',
       //       data: myData
       //     });
-      $.ajax({
+      Ember.$.ajax({
         url: "http://localhost:80/sample_app_api/getData.php",
         // async:false,
         type:'GET',

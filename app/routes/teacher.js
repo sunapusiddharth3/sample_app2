@@ -57,15 +57,15 @@ export default Ember.Route.extend({
         break;
     }
     // get the column number :
-    var column_number = $("table").find("th:contains('"+time_slot+"')").index();
+    var column_number = Ember.$("table").find("th:contains('"+time_slot+"')").index();
     column_number = column_number.toString();
     // get the row number :
-    // var row_number = $("table").find("td:contains('"+current_day+"')").index();
-    var row_number = $("table").find("td:contains('"+current_day+"')").closest('tr').index();
+    // var row_number = Ember.$("table").find("td:contains('"+current_day+"')").index();
+    var row_number = Ember.$("table").find("td:contains('"+current_day+"')").closest('tr').index();
     row_number = row_number.toString();
     row_number++;
     //getting data using row and column
-    var section_data =   $('.table tr').eq(row_number).find('td').eq(column_number).text();
+    var section_data =   Ember.$('.table tr').eq(row_number).find('td').eq(column_number).text();
     // var orig = "1231+";
     var student_class_int = parseInt(section_data);
     student_class_int = ''+student_class_int;
@@ -89,13 +89,14 @@ export default Ember.Route.extend({
     var a = this.get('controller.model');
     // debugger;
     Ember.set(this.modelFor('teacher'), 'student_name', names_of_students);
+    console.log(" here : ");
     console.log(a.student_name);
     console.log(a.particularTeacherTimeTableData);
     }
 },
-beforeModel(transition) {
-  transition.send('doSomething');
-  getClassDataForTimeTable2();
+afterModel(transition) {
+  transition.send('getClassDataForTimeTable2');
+  // getClassDataForTimeTable2();
 },
 
   model(params, transition) {

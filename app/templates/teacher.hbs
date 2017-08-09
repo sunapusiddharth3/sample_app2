@@ -16,7 +16,12 @@
   attendane
   {{#each model.student_name as |b| }}
     <p>
-      {{decodeArrayValues b}}
+      <span>
+      {{printArrayValue b}}
+    </span>
     </p>
   {{/each}}
+</div>
+<div>
+  sample space
 </div>

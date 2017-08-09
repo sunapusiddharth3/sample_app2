@@ -8,7 +8,9 @@ export default Ember.Component.extend({
   },
   actions:{
     getData(){
-      var studentRecord = this.get('store').peekRecord('student',1000);
+      var studentRecord = this.get('store').peekRecord('student',1009);
+      console.log("sid :");
+      console.log(studentRecord);
       var Sclass = studentRecord.get('present_class');
       this.set('model.StudentClass',Sclass);
       var section =studentRecord.get('section');

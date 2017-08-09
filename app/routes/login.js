@@ -8,10 +8,10 @@ export default Ember.Route.extend({
   actions: {
     loginForm() {
       console.log("actioncalled");
-      var uid = $("#uid").val();
-      var password = $("#password").val();
+      var uid = Ember.$("#uid").val();
+      var password = Ember.$("#password").val();
       var dataString = 'uid='+ uid + '&password='+ password;
-      $.ajax({
+      Ember.$.ajax({
         url: "http://localhost:80/sample_app_api/login_details_mysql.php",
         type: 'POST',
         data: dataString ,
